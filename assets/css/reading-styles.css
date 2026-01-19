@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    margin: 5%;
+    background-color: rgb(252, 239, 248);
+}
+body {
+    margin-left: 20%; margin-right: 20%;
+}
+h3 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+.date{
+    font-size: 1.25rem;
+    margin-top: 0%;
+}
+p{
+    font-size: 1.35rem;
+    line-height: 2rem;
+}
+p{ margin-top: 2rem;margin-bottom: 0.5rem;}
+
+ol{ margin: 1.5rem;}
+
+li{ margin:1.5rem; font-size: 1.35rem;}
+
+i{ margin-left: 0.25rem; margin-right: 0.25rem;}   
+
+a {
+    color: black;
+    display: inline-block;
+    transition: color 0.2s ease;
+}
+a:hover{
+    color: rgb(207, 17, 112);
+}
+a:active{
+    color: rgb(187, 50, 118);
+
+}
+a:visited{
+    color: rgb(187, 50, 118);
+}
