@@ -2,43 +2,88 @@
 <html>
 <head>
 	<meta charset="utf-8">
-  <title>Natalie's Accessory Closet</title>
-  <meta property="og:image" content="">
+  <title>Natalie's Graffiti Journal</title>
+  <meta property="image" content="">
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="">
-
+  <link rel="stylesheet" href="https://use.typekit.net/rip8zoc.css">
+  <script src="https://kit.fontawesome.com/fc21f572ec.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-<h1>Nat's Accessory Closet</h1>
 
-<details open>
-  <summary>Bags</summary>
-    <details>
-      <summary class="indent">Green Purse</summary>
-      <p class="indent">This was thrifted from a flea market in Houston.</p>
-    </details>
 
-    <details>
-      <summary class="indent">"Cam On" Totebag</summary>
-          <img src="https://i5.walmartimages.com/seo/Fresh-Granny-Smith-Apple-Each_bf2ec88a-2f36-41f2-93d3-c3161772733d_1.cdc913433c6acc6bf9201dc1fa86bac9.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF">
-          <img src="https://i5.walmartimages.com/seo/Fresh-Granny-Smith-Apple-Each_bf2ec88a-2f36-41f2-93d3-c3161772733d_1.cdc913433c6acc6bf9201dc1fa86bac9.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF">
-          <p>This was bought in Ho Chi Minh City, on Book Street.</p>
-    </details>
-</details>
+   <header>
+    <h1>Nat's Graffiti Journal</h1>
+    <p class="subhead">A diary of street art I've encountered while traveling.</p>
+  </header>
 
-<details>
-  <summary>Scarves</summary>
-    <details>
-      <summary class="indent">Purple Scarf</summary>
-    </details>
+  <main class="cities-map">
+      <section class="city-button">
 
-    <details>
-      <summary class="indent">Silk Scarf 1</summary>
-    </details>
-</details>
+        <div id="florence" class="city sticker type-1">    <!-- combine classes! also is this div neccessary? can we simplify :\-->
+          <a href="cities/florence.html">    
+            <!-- group icons imgs together -->
+            <div class="icon">
+              <img src="assets/duomo.png" class="img-before">
+              <img src="assets/florence-preview.jpeg" class="img-after">  <!--1 image disappears, while otehr appears on hover -->
+            </div>
+            <span class="label">Florence</span>
+          </a>
+        </div>
+
+        <div id="milan" class="city sticker type-2">
+          <a href="cities/milan.html">
+            <div class="icon">
+              <img src="assets/milano.png" class="img-before">
+              <img src="assets/milan-preview.jpg" class="img-after">
+            </div>
+            <span class="label">Milan</span>
+          </a>
+        </div>
+
+        <div id="nyc" class="city sticker type-3">
+          <a href="cities/nyc.html">
+            <div class="icon">
+              <img src="assets/nyc.png" class="img-before">
+              <img src="assets/nyc-preview.jpeg" class="img-after">
+            </div>
+            <span class="label">NYC</span>
+          </a>
+        </div>
+
+        <div id="hanoi" class="city sticker type-4"> 
+          <a href="cities/hanoi.html">
+            <div class="icon">
+              <img src="assets/hanoi.png" class="img-before">
+              <img src="assets/hanoi-preview.jpeg" class="img-after">
+            </div>
+            <span class="label">Hanoi</span>
+          </a>
+        </div>
+
+
+
+
+      </section>
+  </main>
+
+  <!-- IDEA later: track mouse movement, form "brush stroke" so users can paint w/ mouse -->
+
+
+
+  <footer>
+    <p>Made by <a href="https://www.instagram.com/designs.dinh/" target="_blank">Natalie Dinh</a> in 2026. Last updated January 22, 2026.</p>
+  </footer>
+
+    
+  <div class="rectangle"></div>
 
 </body>
 </html>
 
-<!-- This template was adapted from Jisu Lee, Home Sweet Home -->
+<!-- icon credit:
+ <a href="https://www.flaticon.com/free-icons/spray-can" title="spray can icons">Spray can icons created by Freepik - Flaticon</a>
+</details> -->
+
