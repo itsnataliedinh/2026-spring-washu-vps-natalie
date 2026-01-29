@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML + CSS 2</title>
+    <link rel="stylesheet" href="https://use.typekit.net/rnt8hag.css">
+     <!-- for the Iskra typeface -->
+    <script>
+    (function(d) {
+        var config = {
+        kitId: 'rnt8hag',
+        scriptTimeout: 3000,
+        async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+    </script>
+    <!-- for the Dunkel typeface -->
+    <script>
+        (function(d) {
+            var config = {
+            kitId: 'rnt8hag',
+            scriptTimeout: 3000,
+            async: true
+            },
+            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+    </script>
+</head>
+<!-- Concept 1: Testing new font & color choices 
+     Display font: Dunkelsans v0.7 Medium (compatible with Hangul)
+     Body font: Iskra
+     Using blue (based on korean flag) - can add red hover states later
+ -->
+
+<style>
+    html{
+        /* background-color: rgb(138, 39, 39); */
+        background-color: rgb(39, 46, 109); 
+        /* background-color: rgb(241, 245, 124);  */
+    }
+    body{
+        box-sizing: border-box;
+        margin: 2% 22% 3% 22%;
+        background-color: rgb(247, 246, 246);
+        font-family: "iskra", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+        box-shadow: -6px 6px 10px rgb(244, 255, 174);
+    }
+    H1{
+        font-family: "dunkel-sans-medium", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+        text-align: center;
+        font-size: 4.6rem;
+        letter-spacing: 0.03rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+
+        color:aliceblue;
+        background-color: rgb(28, 63, 190);
+    }
+    p{
+        font-size: 1.5rem;
+        line-height: 2.4rem;
+        font-weight: 100;
+        font-style: thin;
+    }
+    header{
+        padding-bottom: 1rem;
+        font-size: 1rem;
+        text-align: center;
+    }
+    header p:first-of-type{
+        margin-top: 0;
+        font-size: 1.8rem;
+    }
+      header p:last-of-type{
+        margin-top: 0;
+        font-size: 1.2rem;
+        margin-bottom: 0;
+    }
+    h3{
+        font-family: "arboria", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 1.4rem;
+    }
+    header h3{
+        /* "locatio" label */
+        font-weight: 600;
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+    .hours{
+        padding-top: 1rem;
+        padding-bottom: 0.5rem;
+        display: flex;
+        justify-content: center;
+        width: 100%;   
+        border-spacing: 0.75rem;
+        font-size: 1.2rem;
+    }
+    #special{
+        max-width: 75%;
+        line-height: 1.9rem;
+        padding-bottom: 1.5rem;
+        margin: auto;
+    }
+    #special h3{
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+    h2{
+        font-size: 2.2rem;
+        text-align: center;
+        color:rgb(28, 63, 190);
+    }
+    .item{
+        padding-bottom: 2%;
+    }
+    h4{
+        /* sauces/ protein labels */
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin: 0;
+    }
+    li {
+        font-size: 1.4rem;
+        padding-bottom: 0.75rem;
+    }
+    #protein{
+        padding-bottom: 2.5%;
+    }
+    #main-menu{
+        margin-bottom: 8%;
+        margin: auto;
+        max-width: 75%
+
+    }
+    #main-menu h2{
+        margin-bottom: 0.5rem;
+    }
+    #sauces{
+        padding-bottom: 8%;
+    }
+    .allergen-info{
+        font-size: 1.2rem;
+        font-weight: 300;
+        font-style: italic;
+        margin-top: 0;
+        margin-bottom: 3%;
+        text-align: center;
+    }
+    #archive{
+        padding-top: 10%;
+        padding-bottom: 8%;
+        margin: auto;
+        max-width: 75%
+    }
+    .descriptor{
+        font-size: 1.4rem;
+        margin: auto;
+        max-width: 75%
+    }
+    .key{
+        padding-left: 8%;
+        padding-bottom: 4%;
+        font-size: 1.4rem;
+        margin: auto;
+        max-width: 75%
+    }
+    .key p:first-of-type{
+        margin-bottom: 0rem;
+        font-style: italic;
+    }
+    summary{
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin: auto;
+        max-width: 75%
+    }
+    summary:first-of-type{
+        margin-top: 2%;
+    }
+    details{
+        font-size: 1.2rem;
+        line-height: 1.9rem;
+        max-width: 65%;
+        margin: auto;
+        max-width: 75%
+    }
+    #archive p{
+        font-size: 1rem;
+        line-height: 1.4rem;
+        margin: 0;
+        margin-bottom: 0.5rem;
+    }
+    .vegan{
+        color: rgb(4, 194, 67);
+        font-weight: 600;
+    }
+    .gf{
+        color: rgb(211, 157, 8);
+        font-weight: 600;
+    }
+    .vegan-gf{
+        color: rgb(224, 13, 157);
+        font-weight: 600;
+    }
+    footer{
+        padding-top: 12%;
+        padding-left: 8%;
+        padding-right: 8%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.2rem;
+    }
+  
+  
+
+
+</style>
+
+
+<body>
+    <header>
+        <h1>tiny chef stl</h1>
+        <p>Korean Inspired Street Food.</p>
+
+        <h3>Location</h3>
+        <p>4701 Morganford inside The Silver Ballroom </p>
+
+        <table class="hours">
+            <tr>
+                <th>Day</th>
+                <th>Hours</th>
+            </tr>
+            <tr>
+                <td>Sunday:</td>
+                <td>5-9pm</td>
+            </tr>
+            <tr>
+                <td>Monday:</td>
+                <td>5-9pm</td>
+            </tr>
+            <tr>
+                <td>Friday:</td>
+                <td>5-10pm</td>
+            </tr>
+             <tr>
+                <td>Saturday:</td>
+                <td>5-10pm</td>
+            </tr>
+        </table>
+    </header>
+
+    <section id="special">
+        <h2>Special of the Week </h2>
+        <h3><strong>Korean Stew</strong></h3>
+        <p>Loaded with mushrooms, onion, carrot, potato, tofu, garlic, ginger, tumeric, and Korean seaweed. It's not only packed with flavor, it's a super food soup. My Korean Stew comes with rice and gets topped with cilantro, scallions and sesame seeds.</p>
+    </section>
+
+    <section id="main-menu">
+        <h2>Main Menu</h2>
+        <p class="allergen-info"><span class="vegan"> * </span>can be made vegan by with tofu. let us know!</p>
+
+        <div class="item">
+            <h3>1. Bibimbap<span class="vegan"> *</span> ---------- $15 </h3>
+            <p>Rice bowl with kimchi, radish, sesame cucumber + carrot, salad, egg, scallions, sesame seeds with protein + sauce of your choice! </p>
+        </div>
+
+        <div class="item">
+            <h3>2. Tacos<span class="vegan"> *</span> ----------  3 for $12</h3>
+            <p>Corn of flour tortillas, napa slaw or kimchi, picu queso fresco, cilantro + lime with protein + suace of your choice</p>
+        </div>
+
+        <div id="protein">
+            <h4><strong> Protein Options:</strong></h4>
+            <ul>
+                <li>Char siu pork belly </li>
+                <li>Char siu tofu </li>
+                <li>Bulgogi chicken</li>
+                <li>Bulgogi steak* </li>
+            </ul>
+            <p>*upcharge for steak</p> 
+        </div>
+
+        <div id="sauces">
+            <h4><strong>Sauces:</strong></h4>
+
+            <p>All sauces, marinades & kimchi are made in house, <strong>vegan</strong>, & <strong>GF</strong>!</p>
+
+            <ol>
+                <li><strong>Dragon</strong> <br> creamy + spicy</li>
+                <li><strong>Pixie</strong> <br> sweet + savory plum sauce</li>
+            </ol>
+        </div>
+     
+    </section>
+   
+    <section id-="archive">
+        <h2>Archive</h2>
+        <p class="descriptor">This archive indexes previous special dishes at Tiny Chef. Have any favorites? Let us know and stay tuned. We'll bring it back!</p>
+
+        <div class="key">
+            <p>Meals can be made vegan or gluten free if specified. Please ask chef!</p>
+            <p><span class="vegan">* </span> vegan <br>    <span class="gf">** </span> GF <br>     <span class="vegan-gf">+ </span> vegan & GF</p>
+      
+        </div>
+
+        <details> <summary><strong>Korean Cheesey Corn</strong><span class="vegan-gf"> +</span></summary>
+        <p>A generous portion of this delicious, cheesy, and mouth-watering corn makes a perfect side dish for your meals. This special is gluten-free and vegetarian friendly.</p>
+        </details> <br>
+
+        <details> <summary><strong>Kimchi Carbonara</strong><span class="vegan"> *</span></summary>
+        <p>A generous portion of luscious Korean udon noodles tossed in a white wine, vegan butter, garlic, ginger, shallot and onion sauce, my vegan kimchi, chiffonade spinach, gochugaru pepper, scallions, and parmesan. I will also have vegan parmesan available! I HIGHLY recommend adding your favorite Tiny Chef protein and happy, sunny egg for an upcharge.</p>
+        </details> <br>
+
+        <details> <summary><strong>Korean Radish Stew </strong></summary>
+        <p>Big chunks of Korean radish, carrots, onions, shallot, potato, mushrooms, garlic and more make this a one-of-a-kind meal. The broth is velvety smooth and features a homemade deonjang paste and gochugaru from the smoky mountains of Gwangju. I highly recommend adding your favorite Tiny Chef protein and a sunny egg to your stew for even more flavor! This delicious bowl of stew will come with a side of rice and gets topped with scallions and toasted sesame seeds.</p>
+        </details> <br>
+
+        <details> <summary><strong>Bulgogi Mushroom</strong><span class="vegan-gf" > +</span></summary>
+        <p>A medley of Asian mushroom sautéed with Mirin and my housemade bulgogi sauce. These mushrooms are vegan friendly AND gluten-free. Add these babies to the Bibimbap, Korean Street Tacos, or get them as a side!</p>
+        </details> <br>
+
+        <details> <summary><strong>Musubi Burrito</strong><span class="vegan-gf"> +</span></summary>
+        <p>Your choice of fried spam or tofu, spinach, nanami togurashi, fried egg, your choice of spicy Dragon or sweet 'n savory Pixie sauce, and rice all wrapped in nori. I HIGHLY recommend adding the cheese for an upcharge to take this burrito to a whole new level. I also have vegan cheese available. These are gluten-free and, without the egg, vegan friendly!</p>
+        </details> <br>
+
+        <details> <summary><strong>Yukgaejang</strong><span class="vegan-gf"> +</span></summary>
+        <p>Yukgaejang 육개장 is a spicy Korean soup chock full of ingredients, including Korean root vegetables and Korean sweet potato noodles. But don't worry, I didn't make it very spicy at all!</p> <br>
+        <p>Korean gosari (a delicious Korean root vegetable), lotus root, Korean sweet potato, onion, carrot, mung bean sprouts, a wide variety of delicious mushrooms, and more are just a part of this epic stew! It's usually made with beef and beef stock, but since I try and make everything from the start vegan friendly, this version has zero animal products. It's also gluten-free, even with the noodles!</p>
+        <p>I HIGHLY RECOMMEND adding protein, a side of rice, and a sunny egg because that will just add to the many levels of flavor. You do not want to miss this special!!</p>
+        </details>
+    </section>
+
+    <footer>
+        <a href="https://www.instagram.com/tinychefstl/?hl=en" target="_blank">Instagram </a></p>
+        <a href="https://www.facebook.com/TinyChefSTL/" target="_blank">Facebook </a>
+    </footer>
+
+</body>
+</html>

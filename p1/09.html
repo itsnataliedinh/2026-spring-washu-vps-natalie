@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML + CSS 4</title>
+    <link rel="stylesheet" href="https://use.typekit.net/jij7frv.css">
+    <!-- <link rel="stylesheet" href="https://use.typekit.net/rnt8hag.css"> -->
+</head>
+<!-- Concept 4: Using Flexbox to center column + sticky header 
+     Display font: Chee
+     Body font: Arboria
+     Adding image files
+ -->
+
+<style>
+    body{
+        box-sizing: border-box;
+        margin: 3% 12% 3% 12%;
+        background-color: rgb(227, 236, 244);
+        font-family: arboria, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        
+    }
+     header{
+        margin: 0;
+        padding-bottom: 0.75rem;
+        font-size: 1.2rem;
+        position: sticky;
+        top: 0;
+        /* must declare top/bottom/L/R to use sticky */
+        max-width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color:  rgb(227, 236, 244);
+
+        display: flex;
+        direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    H1{
+        font-family: cheee-tbone, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        /* font-family: "cheee-variable", sans-serif;
+        font-variation-settings: "GRVT" 69, "YEST" 570; */
+        font-size: 4.2rem;
+        letter-spacing: 0.08rem;
+        color: rgb(146, 28, 28);
+
+    }
+    h2{
+        font-size: 2.4rem;
+    }
+    h3{
+        font-family: "arboria", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 1.4rem;
+    }
+    p{
+        font-size: 1.25rem;
+    }
+    .location-hours{
+        max-width: 65%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0rem;
+        margin: auto;
+    }
+    .location-hours h3{
+        /* "location & hours" text */
+        font-weight: 600;
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+    .location-hours li{
+        padding-bottom: 0.5rem;
+        list-style-type: none;
+    }
+    #special{
+        max-width: 65%;
+        line-height: 1.9rem;
+        padding-top: 4%;
+        padding-bottom: 0.75rem;
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4.5rem;
+        margin: auto;
+    }
+    #stew{
+        width: 80%;
+    }
+    .item{
+        padding-bottom: 2%;
+    }
+    h4{
+        /* sauces/ protein labels */
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 0;
+    }
+    li {
+        font-size: 1.2rem;
+        padding-bottom: 0.75rem;
+    }
+    #protein{
+        padding-bottom: 2.5%;
+    }
+    #main-menu h2{
+        margin-bottom: 0.5rem;
+    }
+    #main-menu{
+        padding-top: 4em;
+        margin-bottom: 12%;
+        max-width: 65%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 4.5rem;
+        row-gap: 2rem;
+        margin: auto;
+
+    }
+    #main-menu img{
+        max-width: 400px;
+        co
+    }
+    .allergen-info{
+        font-size: 1.2rem;
+        font-weight: 400;
+        font-style: italic;
+        margin-top: 0;
+        margin-bottom: 3%;
+    }
+    #archive{
+        margin: 0%;
+        padding-top: 8%;
+    }
+    #key{
+        margin-left: 4%;
+        font-family: "arboria", sans-serif;
+        font-weight: 300;
+        font-style: italic;
+        font-size: 1rem;
+    }
+    summary{
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+    summary:first-of-type{
+        margin-top: 2%;
+    }
+    details{
+        font-size: 1.2rem;
+        line-height: 1.9rem;
+        max-width: 65%;
+    }
+    #archive p{
+        font-size: 1rem;
+        line-height: 1.4rem;
+        margin: 0;
+        margin-bottom: 0.5rem;
+        max-width: 80%;
+    }
+    .vegan{
+        color: rgb(4, 194, 67);
+        font-weight: 600;
+    }
+    .gf{
+        color: rgb(211, 157, 8);
+        font-weight: 600;
+    }
+    .vegan-gf{
+        color: rgb(224, 13, 157);
+        font-weight: 600;
+    }
+  
+  
+
+
+</style>
+
+
+<body>
+    <header>
+        <h1>Tiny Chef STL</h1>
+    </header>
+
+    <div class="location-hours">
+
+        <h3>Location & Hours</h3>
+        4701 Morganford inside The Silver Ballroom <br>
+
+        <ul>
+            <li>Sunday: 5-9pm</li>
+            <li>Monday: 5-9pm</li>
+            <li>Friday: 5-10pm</li>
+            <li>Saturday 5-10pm</li>
+        </ul>
+    </div>
+
+
+    <section id="special">
+        <h2>Special of the Week </h2>
+        <div></div>
+        <div>
+            <h3><strong>Korean Stew</strong></h3>
+            <p>Loaded with mushrooms, onion, carrot, potato, tofu, garlic, ginger, tumeric, and Korean seaweed. It's not only packed with flavor, it's a super food soup. My Korean Stew comes with rice and gets topped with cilantro, scallions and sesame seeds.</p>
+        </div>
+        <img id="stew" src="stew.png" alt="Korean Stew">
+    </section>
+
+    <section id="main-menu">
+        <div>
+            <h2>Main Menu</h2>
+            <p class="allergen-info"><span class="vegan"> * </span>can be made vegan by with tofu. let us know!</p>
+        </div>
+    
+        <div></div>
+
+        <div class="item">
+            <img src="bibimbap.png" alt=bibimbap>
+            <h3>1. Bibimbap<span class="vegan"> *</span> ---------- $15 </h3>
+            <p>Rice bowl with kimchi, radish, sesame cucumber + carrot, salad, egg, scallions, sesame seeds with protein + sauce of your choice! </p>
+        </div>
+
+        <div class="item">
+            <img id=tacos src="tacos.webp" alt=tacos>
+            <h3>2. Tacos<span class="vegan"> *</span> ----------  3 for $12</h3>
+            <p>Corn of flour tortillas, napa slaw or kimchi, picu queso fresco, cilantro + lime with protein + suace of your choice</p>
+        </div>
+
+        <div id="protein">
+            <h4><strong> Protein Options:</strong></h4>
+            <ul>
+                <li>Char siu pork belly </li>
+                <li>Char siu tofu </li>
+                <li>Bulgogi chicken</li>
+                <li>Bulgogi steak* </li>
+            </ul>
+            <p>*upcharge for steak</p> 
+        </div>
+
+        <div id="sauces">
+            <h4><strong>Sauces:</strong></h4>
+
+            <p>All sauces, marinades & kimchi are made in house, <strong>vegan</strong>, & <strong>GF</strong>!</p>
+
+            <ol>
+                <li><strong>Dragon</strong> <br> creamy + spicy</li>
+                <li><strong>Pixie</strong> <br> sweet + savory plum sauce</li>
+            </ol>
+        </div>
+     
+    </section>
+   
+    <section id-="archive">
+        <h2>Archive</h2>
+        <p>This archive indexes previous special dishes at Tiny Chef. Have any favorites? Let us know and stay tuned. We'll bring it back!</p>
+
+        <div class="key">
+            <p>Meals can be made vegan or gluten free if specified. Please ask chef!</p>
+            <p><span class="vegan">* </span> vegan</p>
+            <p><span class="gf">** </span> GF</p>
+            <p><span class="vegan-gf">+ </span> vegan & GF</p>
+        </div>
+
+        <details> <summary>Korean Cheesey Corn<span class="vegan-gf"> +</span></summary>
+        <p>A generous portion of this delicious, cheesy, and mouth-watering corn makes a perfect side dish for your meals. This special is gluten-free and vegetarian friendly.</p>
+        </details> <br>
+
+        <details> <summary>Kimchi Carbonara<span class="vegan"> *</span></summary>
+        <p>A generous portion of luscious Korean udon noodles tossed in a white wine, vegan butter, garlic, ginger, shallot and onion sauce, my vegan kimchi, chiffonade spinach, gochugaru pepper, scallions, and parmesan. I will also have vegan parmesan available! I HIGHLY recommend adding your favorite Tiny Chef protein and happy, sunny egg for an upcharge.</p>
+        </details> <br>
+
+        <details> <summary>Korean Radish Stew</summary>
+        <p>Big chunks of Korean radish, carrots, onions, shallot, potato, mushrooms, garlic and more make this a one-of-a-kind meal. The broth is velvety smooth and features a homemade deonjang paste and gochugaru from the smoky mountains of Gwangju. I highly recommend adding your favorite Tiny Chef protein and a sunny egg to your stew for even more flavor! This delicious bowl of stew will come with a side of rice and gets topped with scallions and toasted sesame seeds.</p>
+        </details> <br>
+
+        <details> <summary>Bulgogi Mushroom<span class="vegan-gf" > +</span></summary>
+        <p>A medley of Asian mushroom sautéed with Mirin and my housemade bulgogi sauce. These mushrooms are vegan friendly AND gluten-free. Add these babies to the Bibimbap, Korean Street Tacos, or get them as a side!</p>
+        </details> <br>
+
+        <details> <summary>Musubi Burrito<span class="vegan-gf"> +</span></summary>
+        <p>Your choice of fried spam or tofu, spinach, nanami togurashi, fried egg, your choice of spicy Dragon or sweet 'n savory Pixie sauce, and rice all wrapped in nori. I HIGHLY recommend adding the cheese for an upcharge to take this burrito to a whole new level. I also have vegan cheese available. These are gluten-free and, without the egg, vegan friendly!</p>
+        </details> <br>
+
+        <details> <summary>Yukgaejang<span class="vegan-gf"> +</span></summary>
+        <p>Yukgaejang 육개장 is a spicy Korean soup chock full of ingredients, including Korean root vegetables and Korean sweet potato noodles. But don't worry, I didn't make it very spicy at all!</p> <br>
+        <p>Korean gosari (a delicious Korean root vegetable), lotus root, Korean sweet potato, onion, carrot, mung bean sprouts, a wide variety of delicious mushrooms, and more are just a part of this epic stew! It's usually made with beef and beef stock, but since I try and make everything from the start vegan friendly, this version has zero animal products. It's also gluten-free, even with the noodles!</p>
+        <p>I HIGHLY RECOMMEND adding protein, a side of rice, and a sunny egg because that will just add to the many levels of flavor. You do not want to miss this special!!</p>
+        </details>
+    </section>
+
+</body>
+</html>
