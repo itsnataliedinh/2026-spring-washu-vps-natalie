@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML + CSS 4</title>
+    <title>HTML + CSS 5</title>
     <link rel="stylesheet" href="https://use.typekit.net/jij7frv.css">
     <!-- <link rel="stylesheet" href="https://use.typekit.net/rnt8hag.css"> -->
 </head>
-<!-- Concept 4: Using Template Grid to center column + sticky header 
-     Display font: Chee
-     Body font: Arboria
-     Adding image files
+<!-- Concept 5: Using Flexbox for the menu layout
+     Use flexbox to position the price
+     Ensure consistent image files size & responsiveness
+     Made protein/ sauce options to appear like buttons
+     Fix the Archive Layout to be centered
+
+    Display font: Chee
+    Body font: Arboria
  -->
 
 <style>
     body{
         box-sizing: border-box;
-        margin: 3% 12% 3% 12%;
-        background-color: rgb(227, 236, 244);
+        margin: 0% 12% 3% 12%;
+        background-color: #EEF7FF;
         font-family: arboria, sans-serif;
         font-weight: 400;
         font-style: normal;
+        max-width: 85%;
+        /* height: 100vh; */
         
     }
      header{
@@ -34,7 +40,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background-color:  rgb(227, 236, 244);
+        background-color: #EEF7FF;
 
         display: flex;
         direction: column;
@@ -50,11 +56,13 @@
         font-variation-settings: "GRVT" 69, "YEST" 570; */
         font-size: 4.2rem;
         letter-spacing: 0.08rem;
-        color: rgb(146, 28, 28);
+        color: #FF2E15;
 
     }
     h2{
-        font-size: 2.4rem;
+        font-size: 2.8rem;
+        text-align: center;
+        padding-bottom: 1rem;
     }
     h3{
         font-family: "arboria", sans-serif;
@@ -87,23 +95,34 @@
         line-height: 1.9rem;
         padding-top: 4%;
         padding-bottom: 0.75rem;
-        
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4.5rem;
         margin: auto;
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2.4rem;
     }
-    #stew{
-        width: 80%;
+    .img-special{
+    max-width: 1400px;
+    height: auto;
+    padding-bottom: 2%;
+    /* overflow: hidden */
+    }
+    .img-special img{
+        max-width: 150%;
+        height: auto;
+        display: block;
+        object-fit: contain;
     }
     .item{
         padding-bottom: 2%;
     }
     h4{
         /* sauces/ protein labels */
-        font-size: 1.2rem;
+        font-size: 2.1rem;
         font-weight: 600;
         padding: 0;
+        text-align: center;
     }
     li {
         font-size: 1.2rem;
@@ -117,18 +136,33 @@
     }
     #main-menu{
         padding-top: 4em;
-        margin-bottom: 12%;
+        padding-bottom: 8.5rem;
+        margin-bottom: 5rem;
         max-width: 65%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 4.5rem;
-        row-gap: 2rem;
         margin: auto;
-
     }
-    #main-menu img{
-        max-width: 400px;
-        co
+    .menu-grid{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 5.9rem;
+    }
+    .img-container{
+    max-width: 400px;
+    height: auto;
+    padding-bottom: 2%;
+    overflow: hidden
+    }
+    .img-container img{
+        max-width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+    }
+    .dish-price{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
     .allergen-info{
         font-size: 1.2rem;
@@ -136,11 +170,60 @@
         font-style: italic;
         margin-top: 0;
         margin-bottom: 3%;
+        text-align: center;
+    }
+    .protein-choices{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.4rem;
+    }
+     .protein-choices .circle{
+        display: eclipse; 
+        background-color: #3c579b;
+        padding: 5px 15px 10px 20px;
+        color:#EEF7FF;
+        font-weight: 600;
+        border-radius: 25px;
+    }
+     .sauce-options{
+        padding-top: 1.6rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 0.5rem;
+    }
+    #sauces p:first-of-type{
+        margin: 0;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+    .sauce-button{
+        text-align: center;
+        display: eclipse; 
+        background-color: #6e577e;
+        padding: 10px 15px 5px 15px;
+        color:#EEF7FF;
+        font-weight: 600;
+        border-radius: 25px;
+    }
+     .sauce-button p:nth-child(1){
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .sauce-button p:nth-child(2){
+        font-weight: 300;
+        margin-top: 0;
     }
     #archive{
-        margin: 0%;
-        padding-top: 8%;
-
+        padding-top: 5%;
+        width: 80%; 
+        margin: 0 auto;
+        margin-bottom: 6%;
+        
+    }
     #key{
         margin-left: 4%;
         font-family: "arboria", sans-serif;
@@ -156,16 +239,17 @@
         margin-top: 2%;
     }
     details{
+        margin: 0 auto;
         font-size: 1.2rem;
         line-height: 1.9rem;
-        max-width: 65%;
+        max-width: 85%;
     }
     #archive p{
-        font-size: 1rem;
-        line-height: 1.4rem;
-        margin: 0;
+        font-size: 1.3rem;
+        line-height: 1.65rem;
+        margin: 0 auto;
         margin-bottom: 0.5rem;
-        max-width: 80%;
+        max-width: 85%;
     }
     .vegan{
         color: rgb(4, 194, 67);
@@ -178,6 +262,14 @@
     .vegan-gf{
         color: rgb(224, 13, 157);
         font-weight: 600;
+    }
+    footer{
+        /* text-align: center; */
+        font-size: 1.2rem;
+        max-width: 20%;
+        margin: 0 auto;
+        padding-top: 2%;
+        padding-bottom: 2%;
     }
   
   
@@ -194,7 +286,7 @@
     <div class="location-hours">
 
         <h3>Location & Hours</h3>
-        4701 Morganford inside The Silver Ballroom <br>
+        <p>4701 Morganford inside The Silver Ballroom</p>
 
         <ul>
             <li>Sunday: 5-9pm</li>
@@ -205,61 +297,91 @@
     </div>
 
 
+     <h2>Special of the Week </h2>
     <section id="special">
-        <h2>Special of the Week </h2>
-        <div></div>
         <div>
             <h3><strong>Korean Stew</strong></h3>
             <p>Loaded with mushrooms, onion, carrot, potato, tofu, garlic, ginger, tumeric, and Korean seaweed. It's not only packed with flavor, it's a super food soup. My Korean Stew comes with rice and gets topped with cilantro, scallions and sesame seeds.</p>
         </div>
-        <img id="stew" src="stew.png" alt="Korean Stew">
+        <div><div class="img-special">
+            <img id="stew" src="stew.png" alt="Korean Stew">
+        </div>
     </section>
 
     <section id="main-menu">
+        
         <div>
             <h2>Main Menu</h2>
-            <p class="allergen-info"><span class="vegan"> * </span>can be made vegan by with tofu. let us know!</p>
-        </div>
-    
-        <div></div>
-
-        <div class="item">
-            <img src="bibimbap.png" alt=bibimbap>
-            <h3>1. Bibimbap<span class="vegan"> *</span> ---------- $15 </h3>
-            <p>Rice bowl with kimchi, radish, sesame cucumber + carrot, salad, egg, scallions, sesame seeds with protein + sauce of your choice! </p>
+             <p class="allergen-info"><span class="vegan"> * </span>can be made vegan by with tofu. let us know!</p>
         </div>
 
-        <div class="item">
-            <img id=tacos src="tacos.webp" alt=tacos>
-            <h3>2. Tacos<span class="vegan"> *</span> ----------  3 for $12</h3>
-            <p>Corn of flour tortillas, napa slaw or kimchi, picu queso fresco, cilantro + lime with protein + suace of your choice</p>
+        <div class="menu-grid">
+            <div class="item">
+                <div class="img-container">
+                    <img src="bibimbap.png" alt=bibimbap>
+                </div>
+                <div class="dish-price">
+                    <h3>1. Bibimbap<span class="vegan"> *</span></h3>
+                    <h3>$15</h3>
+                </div>
+                <p>Rice bowl with kimchi, radish, sesame cucumber + carrot, salad, egg, scallions, sesame seeds with protein + sauce of your choice! </p>
+            </div>
+
+            <div class="item">
+                <div class="img-container">
+                    <img id=tacos src="tacos.webp" alt=tacos>
+                </div>
+                <div class="dish-price">
+                    <h3>2. Tacos<span class="vegan"> *</span></h3>
+                    <h3>3 for $12</h3>
+                </div>
+                <p>Corn of flour tortillas, napa slaw or kimchi, picu queso fresco, cilantro + lime with protein + suace of your choice</p>
+            </div>
         </div>
 
-        <div id="protein">
-            <h4><strong> Protein Options:</strong></h4>
-            <ul>
-                <li>Char siu pork belly </li>
-                <li>Char siu tofu </li>
-                <li>Bulgogi chicken</li>
-                <li>Bulgogi steak* </li>
-            </ul>
-            <p>*upcharge for steak</p> 
-        </div>
+        <div class="customize">
+            <div id="protein">
+                <h4><strong> Protein Options:</strong></h4>
+                <div class="protein-choices">
+                    <div class="circle">
+                        <p>Char siu pork belly </p>
+                    </div>
+                    <div class="circle">
+                        <p>Char siu tofu </p>
+                    </div>
+                    <div class="circle">
+                        <p>Bulgogi chicken</p>
+                    </div>
+                     <div class="circle">
+                        <p>Bulgogi steak* </p>
+                    </div>
+                </div>
 
-        <div id="sauces">
-            <h4><strong>Sauces:</strong></h4>
+                <p>*upcharge for steak</p> 
+            </div>
 
-            <p>All sauces, marinades & kimchi are made in house, <strong>vegan</strong>, & <strong>GF</strong>!</p>
+            <div id="sauces">
+                <h4><strong>Sauces:</strong></h4>
 
-            <ol>
-                <li><strong>Dragon</strong> <br> creamy + spicy</li>
-                <li><strong>Pixie</strong> <br> sweet + savory plum sauce</li>
-            </ol>
+                <p>All sauces, marinades & kimchi are made in house, <strong>vegan</strong>, & <strong>GF</strong>!</p>
+
+                <div class="sauce-options">
+                    <div class="sauce-button">
+                        <p>Dragon</p>
+                        <p>creamy + spicy </p>
+                    </div>
+                    <div class="sauce-button">
+                        <p>Pixie</p>
+                        <p>sweet + savory plum sauce</p>
+                    </div>
+                </div>
+            
+            </div>
         </div>
      
     </section>
    
-    <section id-="archive">
+    <section id="archive">
         <h2>Archive</h2>
         <p>This archive indexes previous special dishes at Tiny Chef. Have any favorites? Let us know and stay tuned. We'll bring it back!</p>
 
@@ -296,6 +418,10 @@
         <p>I HIGHLY RECOMMEND adding protein, a side of rice, and a sunny egg because that will just add to the many levels of flavor. You do not want to miss this special!!</p>
         </details>
     </section>
+
+    <footer>
+        <a href="https://www.instagram.com/tinychefstl/?hl=en" target="blank">Instagram: @tinychefstl </a>
+    </footer>
 
 </body>
 </html>
