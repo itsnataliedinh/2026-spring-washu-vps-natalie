@@ -34,19 +34,19 @@ header{
     font-size: 1.2rem;
     position: sticky;
     top: 0; /* must declare top/bottom/L/R to use sticky */
-    width: 100vw;
+    width: 100%;
     height: auto;
     z-index: 50;
 }
 .header-container{
-    padding: 0.95rem 0rem 0.8rem 0rem;
+    padding: 0.95rem 6rem 0.8rem 6rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     background-color: #E42649;
 }
 #nav-logo{
-    position:absolute;
+    position:sticky;
     display: block;
     width: 15%; 
     margin-left: auto;
