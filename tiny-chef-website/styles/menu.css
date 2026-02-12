@@ -509,6 +509,7 @@ footer{
   display:flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap;
   gap: 3rem;
   margin-bottom: 0;
   
@@ -585,18 +586,64 @@ footer{
 
 
 /* –––––– RESPONSIVE –––––––– */
+/* Header + footer */
 @media (min-width: 1051) and (max-width: 1260px){
   .archive-scroll{ padding: 0 3.5rem 2.5rem 3.5rem; }
   #archiveGrid{ gap: 5rem 2rem; padding-top: 1.2rem;}
   .archive-img-wrap{ width: 110%;}
   .archive-img-wrap img{ width: 120%;}
 }
-
 @media (max-width: 1050px){
   .archive-scroll{ padding: 0 3.5rem 2.5rem 3.5rem; }
   .archive-card{ flex-basis: calc((100% - 3rem) / 2); }
   #archiveClose{ right: 2.2rem; }
   #archiveGrid{ gap: 4.5rem 2rem; padding-top: 1.2rem;}
+}
+/* Header + footer */
+@media (min-width: 900px) and (max-width: 1024px){
+  #nav-logo{
+    width: 10%; 
+    font-size: 1.5rem;
+  }
+}
+/* Header + footer */
+@media (min-width: 750px) and (max-width: 899px){
+  .header-container{
+    padding: 0.8rem 2rem 0.8rem 2rem;
+  }
+  .nav-left, .nav-right{
+    gap: 2rem;
+    padding-top: 0rem;
+  }
+  #nav-logo{
+    width: 10%; 
+    font-size: 1.3rem;
+    padding-top: 0.3rem;
+  }
+   .footer a, .footer p{
+    transform: scale(0.7);
+  }
+}
+/* Header + footer */
+@media (min-width: 500px) and (max-width: 749px){
+
+  .header-container{
+    width: 100%;
+    padding: 0.95rem 1rem 0.8rem 1rem;
+  }
+  .nav-left, .nav-right{
+    gap: 1.2rem;
+    padding-top: 0rem;
+    font-size: 1rem;
+  }
+  #nav-logo{
+    width: 10%; 
+    font-size: 1.3rem;
+    padding-top: 0.3rem;
+  }
+  .footer a, .footer p{
+    transform: scale(0.7);
+  }
 }
 
 @media (max-width: 650px){
@@ -612,4 +659,34 @@ footer{
   .archive-modal-header{ padding-top: 3rem; }
   .archive-modal-header h2{ font-size: 2.4rem; }
   .archive-img-wrap img{ height: 260px; }
+}
+
+/* Header + footer */
+@media (max-width: 499px){
+  .header-container{
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items:center;
+  }
+  .nav-left{
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items:center;
+  }
+  .nav-left, .nav-right{
+    gap: 0.2rem;
+    padding-top: 0rem;
+    font-size: 0.4rem
+  }
+  #nav-logo{
+    width: 6%; 
+    font-size: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+   .footer a, .footer p{
+    transform: scale(0.5);
+  }
 }

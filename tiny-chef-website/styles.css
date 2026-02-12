@@ -821,6 +821,7 @@ footer{
   } */
   .header-container{
     width: 100%;
+    padding: 0.95rem 1rem 0.8rem 1rem;
     /* padding: 0.8rem 1rem 0.8rem 1rem; */
   }
   .nav-left, .nav-right{
@@ -900,8 +901,8 @@ footer{
   .footer a, .footer p{
     transform: scale(0.7);
   }
-
 }
+  /*need to fix overlap text / image in specials section */
 @media (max-width: 499px){
   /* body{
     display: flex;
@@ -924,11 +925,11 @@ footer{
   .nav-left, .nav-right{
     gap: 0.2rem;
     padding-top: 0rem;
-    font-size: 0.8rem
+    font-size: 0.4rem
   }
   #nav-logo{
-    width: 8%; 
-    font-size: 1.3rem;
+    width: 6%; 
+    font-size: 1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
     text-align: center;
@@ -984,8 +985,8 @@ footer{
   .scroll-text {
     font-size: 3rem;
   }
-  .centered-text-col{
-    margin-top: -10%;
+  .centered-text-col p{
+    font-size: 1rem;
   }
   #star-vector{
     max-width: 55%;
@@ -998,8 +999,8 @@ footer{
     left: 10%;
   }
   .specials-img{
-    position: realti;
-    transform: scale(0.6);
+    position: relative;
+    transform: scale(0.4);
     padding-top: -20%;
   }
   .dish p{
