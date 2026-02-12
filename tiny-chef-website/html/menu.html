@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiny Chef Menu</title>
+    <link rel="stylesheet" href="../styles/menu.css">
+    <link rel="stylesheet" href="https://use.typekit.net/jij7frv.css">
+    <script src="https://kit.fontawesome.com/fc21f572ec.js" crossorigin="anonymous"></script>
+
+    <!-- archival js files -->
+    <script src="../script/archive-data.js" defer></script>
+    <script src="../script/archive-ui.js" defer></script>
+    
+</head>
+<!-- Build off Flexbox for the menu layout
+     
+     TO-DO:
+     - resize all photos + fit photos into frame
+     - ensure consistent type
+     - build archive as modal
+     - add allergen symbols [✅]
+ -->
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="nav-left">
+                <a href="html/about.html" class="nav-button">About</a>
+                <a href="menu.html" class="nav-button">Menu</a>
+            </div>
+            <a href="../index.html" id="nav-logo">Tiny Chef</a>
+            <div class="nav-right">
+                <div></div> <!-- spaceholder -->
+                <a href="html/contact.html" class="nav-button">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <div id="folder-preview">
+    <!-- wrapping both folder img + text/ button in link, so both areas clickable -->
+        <a href="menu.html#archive"><img src="../assets/archive/folder-tab.png" class="folder-tab"></a>
+        <button>
+            <a href="menu.html#archive">Archive <i class="fa-solid fa-angle-up"></i></a>
+        </button>
+    </div>
+
+    <section id="main-menu">
+        
+        <div>
+            <h2>Main Menu</h2>
+             <p class="allergen-info"><span class="vegan"> * </span>Can be made vegan with tofu. Let us know!</p>
+        </div>
+
+        <div class="menu-grid">
+            <div class="item">
+                <div class="dish-price">
+                    <h3>Bibimbap<span class="vegan"> *</span></h3>
+                    <h3>$15</h3>
+                </div>
+                <div class="img-container">
+                    <img src="../assets/menu/charsiu-bibimbap.jpg" alt=bibimbap>
+                </div>
+                <p>Rice bowl with kimchi, radish, sesame cucumber, carrot, salad, egg, scallions, sesame seeds with protein + sauce of your choice! </p>
+            </div>
+
+            <div class="item">
+                <div class="dish-price">
+                    <h3>Tacos<span class="vegan"> *</span></h3>
+                    <h3>3 for $12</h3>
+                </div>
+                <div class="img-container">
+                    <img id=tacos src="../assets/menu/tacos.jpg" alt=tacos>
+                </div>
+                <p>Corn or flour tortillas, napa slaw or kimchi, picu queso fresco, cilantro, and lime with protein + sauce of your choice</p>
+            </div>
+        </div>
+
+        <div class="customize">
+            <div id="protein">
+                <h4>Protein</h4>
+                <p>*upcharge for steak</p> 
+                <div class="protein-choices">
+                    <div class="protein-type">
+                        <div class="circle">
+                            <img src="../assets/menu/protein/pork-belly.jpg" alt="char siu pork belly">
+                        </div>
+                        <p>Char siu pork belly </p>
+                    </div>
+                    <div class="protein-type">
+                        <div class="circle">
+                            <img src="../assets/menu/protein/tofu.jpg" alt="char siu tofu">
+                        </div>
+                        <p>Char siu tofu </p>
+                    </div>
+                    <div class="protein-type">
+                        <div class="circle">
+                            <img src="../assets/menu/protein/chicken.jpg" alt="bulgogi chicken">
+                        </div>
+                        <p>Bulgogi chicken</p>
+                    </div>
+                    <div class="protein-type">
+                        <div class="circle">
+                             <img src="../assets/menu/protein/bulgogi.png" alt="bulgogi steak">
+                        </div>
+                        <p>Bulgogi steak*</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sauces">
+                <h4>Sauces</h4>
+
+                <p>All sauces, marinades & kimchi are made in house, <strong>vegan</strong>, & <strong>GF</strong>!</p>
+
+                <div class="sauce-options">
+
+                    <div class="sauce-type">
+                        <div class="circle">
+                             <img src="../assets/menu/sauces/dragon.jpg" alt="Dragon Sauce">
+                        </div>
+                        <p>Dragon</p>
+                        <p>creamy + spicy </p>
+                    </div>
+
+                    <div class="sauce-type">
+                        <div class="circle">
+                             <img src="../assets/menu/sauces/plum.jpg" alt="Pixie Sauce">
+                        </div>
+                        <p>Pixie</p>
+                        <p>sweet + savory plum sauc</p>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+     
+    </section>
+   
+    <div class="cta-prompt">
+        <h2>Wanna see more dishes?</h2>
+        <p class="cta">View the Archive of Weekly Specials.</p>
+        <div class="button">
+            <a href="menu.html#archive">
+                <img src="../assets/menu/folder-icon.png">
+                <!-- consider adding arrow to left? -->
+            </a>
+        </div>
+
+    </div>
+
+     <div id="archiveOverlay" hidden></div>
+
+    <section id="archiveModal" aria-hidden="true">
+        <div class="archive-modal-header">
+        <h2>Archive</h2>
+        <button id="archiveClose" type="button" aria-label="Close archive">×</button>
+        </div>
+
+        <div class="archive-scroll">
+        <div class="key">
+                <p>Meals can be made vegan or gluten free if specified. Please ask chef!</p>
+                <p><span class="vegan">* </span> vegan <br> <span class="gf">** </span> GF <br><span class="vegan-gf">+ </span> vegan & GF </p>
+            </div>
+        <div id="archiveGrid">
+            <!-- cards filled w/ data from archive-ui.js -->
+        </div>
+    </div>
+    </section>
+
+
+    <footer>
+        <div class="footer-left">
+                <div class="footer-logo">
+                    <a href="../index.html">Tiny Chef </a>
+                    <p>in St. Louis, MO</p>
+                    <p>Copyright 2026</p>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/tinychefstl/?hl=en"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/TinyChefSTL/"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+
+         </div>
+        <div class="footer-right">
+                <a href="html/about.html" class="footer-link">About</a>
+                <a href="menu.html" class="footer-link">Menu</a>
+                <a href="html/menu.html#archive" class="footer-link">Archive</a> 
+                <a href="html/contact.html" class="footer-link">Contact</a>
+        </div>
+    </footer>
+
+</body>
+</html>
+  

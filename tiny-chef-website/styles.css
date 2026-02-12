@@ -1,0 +1,692 @@
+* {
+   box-sizing: border-box;
+}
+body{
+    box-sizing: border-box;
+    margin: 0% 0% 0% 0%;
+    /* for full bleed img, does absolute position remove it from inline flow & margin rules? 
+     might be best to apply specific margin rules per section instead of overall in body */
+    background-color: #E9F5FF;
+    font-family: arboria, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    max-width: 100%;  
+}
+h3{
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+p{
+  font-size: 1.2rem;
+}
+header{
+    margin: 0;
+    padding-bottom: 0.75rem;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0; /* must declare top/bottom/L/R to use sticky */
+    width: 100vw;
+    height: auto;
+    z-index: 50;
+}
+.header-container{
+    padding: 0.95rem 0rem 0.8rem 0rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #E42649;
+}
+#nav-logo{
+    position:absolute;
+    display: block;
+    width: 15%; 
+    margin-left: auto;
+    margin-right: auto;
+
+    font-family: cheee-jimbo, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5rem;
+    letter-spacing: 0.08rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+#nav-logo:hover{
+  transform: translateY(-2%);
+  transform: rotate(-2deg);
+  transition: transform 120ms ease;
+  filter: drop-shadow(5px 5px 10px #e6ff5b);
+}
+.nav-left, .nav-right{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 6.5rem;
+    padding-top: 0.75rem;
+}
+.nav-button{
+    text-decoration: none;
+    color:#ffffff;
+    font-size: 1.2rem;
+}
+.nav-button:hover{
+    text-decoration: none;
+    background-color:#071D7F;
+    border-radius: 75px;
+    padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+    font-size: 1.2rem;
+}
+.nav-button:active{
+  background-color:#fa0c38;
+}
+#hero{
+  margin: 0 12% 2% 12%;
+}
+.hero-grid{
+  position: relative;
+  min-height: calc(100vh - 90px);
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(32px, auto);
+  align-content: start;
+  padding-top: clamp(16px, 3vh, 36px);
+}
+.layer{
+  /* Nudge system for collage style*/
+  --tx: 0px;
+  --ty: 0px;
+  --rot: 0deg;
+    /* animate */
+  
+  transform: translate(var(--tx), var(--ty)) rotate(var(--rot));
+  will-change: transform;
+}
+.hero-grid h1,.hero-grid h4{
+  margin: 0;
+  line-height: 0.85;
+}
+.hero-bibimbap{ /* (top-left) */
+  grid-column: 2 / span 4;
+  grid-row: 1 / span 3;
+  z-index: 6;
+
+  animation: bibimbapIn 900ms cubic-bezier(.22,.61,.36,1) 250ms both;
+}
+.hero-bibimbap img{
+  width: clamp(180px, 26vw, 340px);
+  height: auto;
+  display: block;
+}
+.hero-korean{
+  grid-column: 2 / span 9;
+  grid-row: 3 / span 2;
+  z-index: 12;
+  margin-top: -2rem;
+
+  --tx: 0px;
+  --ty: 10px;
+  animation: textFadeIn 650ms 250ms;
+}
+.hero-korean h1{
+  font-family: arboria, sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.5rem;
+  font-size: clamp(3.6rem, 9.5vw, 10rem);
+  color: #E42649;
+}
+.hero-american{
+  grid-column: 4 / span 9;
+  grid-row: 4 / span 2;
+  z-index: 1;
+
+  --tx: 0px;
+  --ty: 22px;
+  animation: textFadeIn 650ms 700ms;
+}
+.hero-american h1{
+  font-family: arboria, sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.5rem;
+  font-size: clamp(3.6rem, 9.5vw, 10rem);
+  color: #071D7F;
+  text-align: right;
+}
+.hero-tacos{ /* right side */
+  grid-column: 7 / -1;
+  grid-row: 6 / span 4;
+  justify-self: end;
+  z-index: 4;
+
+  --rot: 8deg;
+  animation: tacosIn 950ms cubic-bezier(.22,.61,.36,1) 700ms both;
+  
+}
+.hero-tacos img{
+  width: clamp(260px, 42vw, 640px);
+  height: auto;
+  display: block;
+}
+@keyframes bibimbapIn{
+  from{
+    transform: translate(calc(var(--tx) - 120vw), var(--ty)) rotate(var(--rot));
+    opacity: 0;
+  }
+  to{
+    transform: translate(var(--tx), var(--ty)) rotate(var(--rot));
+    opacity: 1;
+  }
+}
+@keyframes textFadeIn{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+@keyframes tacosIn{
+  from{
+    transform: translate(calc(var(--tx) + 120vw), var(--ty)) rotate(var(--rot));
+    opacity: 0;
+  }
+  to{
+    transform: translate(var(--tx), var(--ty)) rotate(var(--rot));
+    opacity: 1;
+  }
+}
+.hero-sub{
+  grid-column: 2 / span 5;
+  grid-row: 6 / span 3;
+  z-index: 2;
+
+  --tx: 0px;
+  --ty: 10px;
+  animation: textFadeIn 650ms 850ms;
+}
+.hero-sub h4{
+  font-family: arboria, sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: -0.15rem;
+  font-size: clamp(3rem, 8.5vw, 9rem);
+  color:#071D7F;
+}
+.hero-cta{
+  grid-column: 1 / -1; /* centers horizontally */
+  grid-row: 9 / span 1;
+  justify-self: center;
+  z-index: 10;
+  --ty: 10px;
+}
+.button a{
+  display: inline-block;
+  margin-top: 0;
+  background-color: #E42649;
+  border-radius: 999px;
+  padding: 0.9rem 1.4rem;
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+}
+.button a:hover{
+  display: inline-block;
+  margin-top: 0;
+  background-color: #F3DF2D;
+  border-radius: 999px;
+  padding: 1.1rem 1.6rem;
+  text-decoration: none;
+  color: #071D7F;
+  font-size: 1.3rem;
+  transform: rotate(4deg);
+  filter: drop-shadow(0 10px 18px rgba(255, 247, 0, 0.25));
+}
+/* –––––––––––––– LOCATION PIC ––––––––––––––*/
+.location{
+  width: 100%;
+  background-image: linear-gradient(to bottom, #071D7F, #293e9c);
+  /* background-color: #071D7F; */
+  padding: 3rem 0;
+}
+.location-container{
+  max-width: 85%;
+  height: auto;
+  margin: 0 auto;
+  padding: -2% 0% -2% 0%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1.75rem;
+}
+.location-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 520px;
+  color: #ffffff;
+  margin: 0 auto;
+}
+.location-text h3{
+  margin: 0 0 0.75rem 0;
+  color:#F3DF2D;
+}
+.location-text p{
+  margin: 0 0 0.75rem 0;
+  line-height: 1.5;
+  font-size: 1.35rem;
+  letter-spacing: 0.05rem;
+}
+.location-link{
+  color:white;
+  text-decoration: underline;
+  font-weight: 600;
+}
+.location-link:hover{
+  color:#F3DF2D;
+}
+.location-sign{
+  display: flex;
+  justify-content: center;
+}
+.location-sign img{
+  width: min-max(320px, 711px);
+  max-width: 85%;
+  height: auto;
+  margin: 0 auto;
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 15px;
+  border: 3px solid rgb(255, 255, 255);
+  object-fit:contain;
+  display: block;
+}
+.immersive-view{
+  position: relative;
+}
+#full-pic{
+  width: 100vw;
+  max-width: 125%;
+  height: auto;
+  object-fit:cover;
+  display: block;
+}
+/* –––––––––––––– HOURS POPUP ––––––––––––––*/
+#clock-container{
+  position: absolute;
+  top: 15%;
+  left: 76%;
+}
+.clock-btn{ 
+  /* use button selector to make clickable */
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 5;
+} 
+/* make some pulating animation to prompt click, grow/ shrink or rotate? */
+.clock-btn img{
+  display: block;
+  filter: drop-shadow(0 10px 18px rgba(255, 247, 0, 0.25));
+}
+#hours-prompt{
+  opacity: 1;
+  font-size: 1.3rem;
+  color:#ffffff;
+}
+.clock-btn:hover{
+  transform: translate(-5%, -5%) rotate(0deg) scale(1.05);
+  filter: drop-shadow(0 10px 18px rgba(255, 254, 237, 0.25));
+  border: 2px solid #F3DF2D;
+  border-radius: 15px;
+
+  filter: drop-shadow(0 50px 50px rgba(255, 247, 0, 0.25));
+}
+.hours-overlay{
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+  background: rgba(0,0,0,0.55);
+  z-index: 999;
+}
+/* when open*/
+.hours-popup.is-open{
+  display: grid;
+}
+/* hours popup*/
+.hours-popup{
+  position: absolute;
+  z-index: 6;
+  /* anchor position, need to manually adjust for breakpoints */
+  top: calc(22% + 85px);  /* same base as clock top, nudged down */
+  left: 400px; /* same base as clock left */
+
+  width: min(300px, 85vw);
+  background: #E9F5FF;
+  border: 2px solid #E42649;
+  border-radius: 16px;
+  padding: 1rem 1rem 1.1rem;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.25);
+  /* hidden by default */
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+.hours-popup.is-open{
+  opacity: 1;
+  transform: translateY(-25px);
+  transform: translateX(-150px);
+  pointer-events: auto;
+  transition: opacity 250ms ease, transform 250ms ease;
+}
+.hours-close{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(0,0,0,0.15);
+  cursor: pointer;
+  font-size: 18px;
+}
+.hours{
+  width: 80%;
+  border-collapse: collapse;
+  font-family: arboria, sans-serif;
+}
+.hours th{
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 2px solid rgba(0,0,0,0.15);
+  font-size: 1.4rem;
+}
+.hours td{
+  padding: 10px 8px;
+  border-bottom: 1px solid rgba(0,0,0,0.10);
+  font-size: 1.2rem;
+}
+/* –––––––––––––– JUKEBOX ––––––––––––––*/
+#jukebox-container{
+  position: absolute;
+  top: 60%;
+  left: 18%;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 15px;
+  font-size: 1.45rem;
+  padding: 0rem 1rem 0rem 1rem;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.25);
+  transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+}
+.jukebox-btn{
+  cursor: pointer;
+  z-index: 5;
+}
+.jukebox-btn:hover{
+  background-color: #F3DF2D;
+}
+.play-btn{   /* toggle play/pause */
+  display: inline-block;
+}
+.pause-btn{
+  display: none;
+}
+.jukebox-btn.is-playing .play-btn{
+  display: none;
+}
+.jukebox-btn.is-playing .pause-btn{
+  display: inline-block;
+}
+.jukebox-btn:hover .play-btn{
+    transform:scale(1.15);
+}
+/* –––––––––––––– SCROLL TEXT ––––––––––––––*/
+.scroll-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: #E9F5FF;
+  white-space: nowrap;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+}
+.scroll-text {
+  font-size: 7rem;
+  font-weight: 600;
+  color:#E42649;
+  display: inline-block;
+  padding-left: 100%; /* Starts the text completely off-screen to the right */
+  animation: scroll 16s linear infinite;
+  animation-play-state: paused; /* ensures paused at first */
+}
+.scroll-text.is-playing {
+  animation-play-state: running; /* waits for mouse to enter use JS */
+}
+@keyframes scroll {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0); /* End position: moves left by 100% of its own width */
+  }
+}
+/* –––––––––––––– WEEKLY SPECIAL ––––––––––––––*/
+.weekly-special{
+  /* max-width: 65%; */
+  display: flex;
+  flex-direction: column;
+  /* margin: 0 auto; */
+  align-items: center;
+  margin-top: 5%;
+}
+.star{
+  position: relative;
+  z-index: -10;
+}
+#star-vector{
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+
+  animation: starSpin 16s linear infinite;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+@keyframes starSpin{
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.star.slow { animation-duration: 40s; }
+
+.dish{
+  position: absolute;
+  top: 5%;
+  left: 25%;
+  z-index: 50;
+}
+.specials-img{
+  /* how to make repsonsive without adjsutig size per breakpoint? */
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+.dish p:first-of-type{
+  font-weight: 800;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-top: 14%;
+  margin-bottom: -2%;
+}
+.dish p:last-of-type{
+  color:#071D7F;
+  font-weight: 500;
+  font-size: 4.5rem;
+  text-align: center;
+  margin-top: 0%;
+  margin-bottom: 1%;
+}
+.centered-text-col{
+  max-width: 45%;
+  text-align: center;
+  font-size: 2.6rem;
+  line-height: 2.3rem;
+  padding-bottom: 2%;
+}
+.cta{
+  font-size: 2rem;
+  font-weight:600;
+  margin-bottom: 1%;
+  color:#071D7F
+}
+/* –––––––––––––– CAROUSEL ––––––––––––––*/
+.carousel{
+  --gap: 2rem;
+  --peek: 60px;/* how much of preview image shown */
+  --radius: 14px;
+
+  width: min(1200px, 100vw);
+  margin: 3rem auto;
+  overflow: hidden;
+  position: relative;
+  margin-top: 10rem;
+}
+.carousel-track{
+  display: flex;
+  gap: var(--gap);
+
+  /* 3 full pics + peek of 4th */
+  transform: translateX(0);
+  transition: transform 700ms cubic-bezier(.22,.61,.36,1);
+  will-change: transform;
+}
+/* img holder */
+.car-img{
+  flex: 0 0 calc((100% - (2 * var(--gap)) - var(--peek)) / 3);
+  height: clamp(180px, 24vw, 280px);
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+/* Images fit */
+.car-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 350ms ease;
+}
+/* hint styling: 4th image slightly fades */
+.carousel .car-img:nth-child(4) img{
+  opacity: 0.35;
+}
+/* hover: slide left exactly one card (plus one gap) */
+.carousel:hover .carousel-track{
+  transform: translateX(calc(-1 * ( (100% - (2 * var(--gap)) - var(--peek)) / 3 + var(--gap) )));
+}
+/* When hovered, 4th image becomes full opacity */
+.carousel:hover .car-img:nth-child(4) img{
+  opacity: 1;
+}
+/* subtle fade edge on right to match */
+.carousel::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70px;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(to right, rgba(233,245,255,0), rgba(233,245,255,1));
+}
+footer{
+  width: 100%;
+  height: auto;
+  background-color: #071D7F;
+
+  padding: 1% 3% 2% 3%;
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  margin-bottom: 0;
+  
+}
+.footer-left{
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+}
+.footer-logo p{
+  margin: 0;
+  line-height: 1.4;
+  color:#ffffff;
+}
+.footer-logo p:first-child{
+  font-family: cheee-jimbo, sans-serif; /* logo font */
+  font-size: 2rem;
+  letter-spacing: 0.06rem;
+  color:#F3DF2D;
+}
+.footer-logo p:first-child:hover{
+  transform: translateY(-2%);
+  transform: rotate(-2deg);
+  transition: transform 120ms ease;
+  filter: drop-shadow(5px 5px 10px #e6ff5b);
+}
+.footer-logo p:nth-child(2){
+  margin-top: -2%;
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+.footer-logo p:nth-child(3){
+  font-size: 0.9rem;
+}
+/* SOCIAL ICONS */
+.social-icons{
+  padding-top: 2%;
+  display: flex;
+  gap: 1.25rem;
+}
+.social-icons a{
+  color: #ffffff;
+  font-size: 1.6rem;
+  transition: transform 150ms ease, opacity 150ms ease;
+}
+.social-icons a:hover{
+  transform: scale(1.1) rotate(-4deg);
+  opacity: 0.85;
+  color:#F3DF2D;
+}
+/* RIGHT SIDE LINKS */
+.footer-right{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  align-items: flex-end;
+}
+.footer-link{
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.05rem;
+  letter-spacing: 0.02rem;
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+.footer-link:hover{
+  opacity: 0.85;
+  transform: translateX(-3px);
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+

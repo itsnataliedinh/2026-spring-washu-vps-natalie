@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiny Chef STL</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/jij7frv.css">
+    <script src="https://kit.fontawesome.com/fc21f572ec.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="nav-left">
+                <a href="html/about.html" class="nav-button">About</a>
+                <a href="html/menu.html" class="nav-button">Menu</a>
+            </div>
+            <a href="index.html" id="nav-logo">Tiny Chef</a>
+            <div class="nav-right">
+                <div></div> <!-- spaceholder -->
+                <a href="html/contact.html" class="nav-button">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero">
+    <div class="hero-grid">
+        <div class="layer hero-bibimbap">
+        <img src="assets/home/bibimbap-reduced.png" alt="Bowl of Korean Bibimbap">
+        </div>
+
+        <div class="layer hero-korean">
+        <h1>Korean</h1>
+        </div>
+
+        <div class="layer hero-american">
+        <h1>American</h1>
+        </div>
+
+        <div class="layer hero-tacos">
+        <img src="assets/home/tacos-isolated.png" alt="Korean street tacos">
+        </div>
+
+        <div class="layer hero-sub">
+        <h4>street</h4>
+        <h4>food</h4>
+        </div>
+
+        <div class="layer hero-cta button">
+        <a href="about.html">Our Story</a>
+        </div>
+    </div>
+    </section>
+
+    <section class="location">
+        <div class="location-container">
+            <div class="location-text">
+                <h3>Location & Hours</h3>
+                <p>We’re located inside the <a href="https://share.google/Ychlk7cyEMVlCMDl6" class="location-link" target="_blank">The Silver Ballroom</a>.</p>
+                <p>4701 Morgan Ford Rd, St. Louis, MO 63116</p>
+            </div>
+            <div class="location-sign">
+                <img src="assets/home/silver-ballroom-sign.jpg" alt="The Silver Ballrom storefront.">
+            </div>
+        </div>
+    </section>
+
+    <section class="immersive-view">
+        <img src="assets/home/interior-immersive.jpg" alt="The inside of The Silver Ballroom Bar. An open kitchen counter with the sign 'Order Here'." id="full-pic">
+
+        <button id="clock-container" class="clock-btn">
+            <img src="assets/home/clock.png" alt="Click here to view restaurant hours">
+            <p id="hours-prompt">View Hours</p>
+        </button>
+
+        <div class="hours-popup" id="hoursOverlay" role="dialog">
+                <button class="hours-close" aria-label="Close hours">✕</button>
+                    <table class="hours">
+                    <tr>
+                        <th>Day</th>
+                        <th>Hours</th>
+                    </tr>
+                    <tr>
+                        <td>Sunday:</td>
+                        <td>5-9pm</td>
+                    </tr>
+                    <tr>
+                        <td>Monday:</td>
+                        <td>5-9pm</td>
+                    </tr>
+                    <tr>
+                        <td>Friday:</td>
+                        <td>5-10pm</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday:</td>
+                        <td>5-10pm</td>
+                    </tr>
+                    </table>
+       
+        </div>
+
+        <button id="jukebox-container" class="jukebox-btn">
+            <p id="music-prompt">Play Jukebox </p>
+            <span class="play-btn">▶︎</span>
+            <span class="pause-btn">⏸</span>
+        </button>
+
+        <audio>
+            <audio id="jukebox-audio" preload="auto">
+            <source src="assets/home/jukebox-sound.m4a" type="audio/mp4">
+            Your browser does not support the audio element.
+        </audio>
+        </audio>
+    </section>
+
+    <div class="scroll-container">
+        <div class="scroll-text">
+            There's nothing more punk rock than exploring new flavors.
+        </div>
+        <!-- <div class="scroll-text">
+            Part Korean, part American, 100% good food.
+        </div> -->
+    </div>
+
+    <section class="weekly-special">
+        <div class="star">
+            <img src="assets/home/star-2.png" id="star-vector">
+            <div class="dish">
+                <p>Weekly Special:</p>
+                <p>Korean Nachos</p>
+                <div class="specials-img">
+                    <img src="assets/home/nachos-isolated.png" alt="Tiny Chef Korean Nachos">
+                </div>
+             </div>
+         </div>
+        <div class="centered-text-col">
+            <p>Don't miss out on this limited time dish. Add your favorite protein and an egg to take your Nachos next level! <strong>Vegan cheese</strong> and <strong>vegan homemade sour cream</strong> are also available.</p>
+        </div>
+        <p class="cta">See our Main Dishes</p>
+        <div class="button">
+            <a href="html/menu.html">View Menu</a>
+        </div>
+    </section>
+
+    <section class="carousel">
+        <div class="carousel-track">
+            <div class="car-img">
+                <img src="assets/home/storefront.jpg" alt="Outside of the Silver Ballroom">
+            </div>
+            <div class="car-img">
+                <img src="assets/home/bar-vibe.jpg" alt="Inside bar scene">
+            </div>
+            <div class="car-img">
+                <img src="assets/home/pinball.jpg" alt="Pinball machines inside the bar">
+            </div>
+            <div class="car-img">
+                <img src="assets/home/more-pinball.jpg" alt="Pinball machines inside the bar">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-left">
+                <div class="footer-logo">
+                    <p>Tiny Chef </p>
+                    <p>in St. Louis, MO</p>
+                    <p>Copyright 2026</p>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/tinychefstl/?hl=en"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/TinyChefSTL/"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+
+         </div>
+        <div class="footer-right">
+                <a href="html/about.html" class="footer-link">About</a>
+                <a href="html/menu.html" class="footer-link">Menu</a>
+                <a href="html/menu.html#archive" class="footer-link">Archive</a> 
+                <a href="html/contact.html" class="footer-link">Contact</a>
+        </div>
+    </footer>
+    
+
+    <script src="script.js"></script>
+
+</body>
+</html>

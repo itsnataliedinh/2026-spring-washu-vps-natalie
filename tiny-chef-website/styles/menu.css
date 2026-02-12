@@ -1,0 +1,615 @@
+* {
+   box-sizing: border-box;
+}
+body{
+    box-sizing: border-box;
+    margin: 0% 0% 0% 0%;
+    background-image: linear-gradient(#E9F5FF, #FFFBE8);
+    font-family: arboria, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    max-width: 100%;  
+}
+h2{
+    font-size: 3rem;
+    padding-bottom: 0.5rem;
+    color:#071D7F;
+    text-align: center;
+    margin-bottom: 0rem;
+}
+h3{
+  font-size: 1.6rem;
+  padding-bottom: 1rem;
+  margin: 0;
+}
+.dish-price h3:first-of-type{
+    color:#E42649;
+}
+p{
+  font-size: 1.2rem;
+}
+header{
+    margin: 0;
+    padding-bottom: 0.75rem;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0; /* must declare top/bottom/L/R to use sticky */
+    width: 100vw;
+    height: auto;
+    z-index: 50;
+}
+.header-container{
+    padding: 0.95rem 0rem 0.8rem 0rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #E42649;
+}
+#nav-logo{
+    position:absolute;
+    display: block;
+    width: 15%; 
+    margin-left: auto;
+    margin-right: auto;
+
+    font-family: cheee-jimbo, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5rem;
+    letter-spacing: 0.08rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+#nav-logo:hover{
+  transform: translateY(-2%);
+  transform: rotate(-2deg);
+  transition: transform 120ms ease;
+  filter: drop-shadow(5px 5px 10px #e6ff5b);
+}
+.nav-left, .nav-right{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 6.5rem;
+    padding-top: 0.75rem;
+}
+.nav-button{
+    text-decoration: none;
+    color:#ffffff;
+    font-size: 1.2rem;
+}
+.nav-button:hover{
+    text-decoration: none;
+    background-color:#071D7F;
+    border-radius: 75px;
+    padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+    font-size: 1.2rem;
+}
+.nav-button:active{
+  background-color:#fa0c38;
+}
+/* –––––––––––– FOLDER TAB - PREVIEW  ––––––––––––– */
+#folder-preview{
+    position: fixed;
+    transform: translateY(-20px) translateX(-2px);
+}
+#folder-preview img{
+    max-height: 95vh;
+    width: auto;
+}
+#folder-preview button{
+  transform: translateY(-200px) translateX(-79px) rotate(90deg);
+  z-index: 50;
+  font-size: 1.4rem;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  color: #E42649;
+}
+#folder-preview button a{
+  text-decoration: none;
+  color: inherit;
+}
+#folder-preview button:hover{
+  transform: translateY(-200px) translateX(-79px) rotate(90deg) scale(1.15);
+  cursor: pointer;
+  background-color: #FFFBE8;
+  border: none;
+  color: #E42649;
+}
+
+/* –––––––––––– MAIN ––––––––––––– */
+.item{
+    padding-bottom: 2%;
+}
+h4{
+    /* sauces & protein labels */
+    font-size: 2.4rem;
+    font-weight: 600;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+}
+.customize{
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+#main-menu{
+    padding-top: 4em;
+    padding-bottom: 8.5rem;
+    margin-bottom: 5rem;
+    max-width: 65%;
+    margin: auto;
+}
+#protein{
+    padding-bottom: 2.5%;
+    margin-bottom: 3%;
+}
+.menu-grid{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+}
+.dish-price{
+    max-width: 417px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.item p{
+    max-width: 417px;
+}
+.img-container{
+    max-width: 417px;
+    height: auto;
+    border-radius: 25px;
+    padding-bottom: 2%;
+    overflow: hidden
+}
+.img-container img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+.allergen-info{
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 3%;
+    text-align: center;
+}
+.protein-choices{  /* TODO: need to center on wrap/ break point 
+    need to decrease gap of grid on mobile layout */
+    /* max-width: 85%; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* align-items: center; */
+    gap: 0.35rem;
+    margin: 0 auto;
+}
+.protein-choices .circle{
+    display: eclipse; 
+    padding: 5px 15px 10px 20px;
+    color:#EEF7FF;
+    border-radius: 50%;
+    max-width: 240px;
+    height: auto;
+    overflow: hidden
+}
+.circle img{
+    max-width: 120%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    padding-left: 0%;
+}
+#protein p:first-of-type{
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 3%;
+    text-align: center;
+}
+#protein .protein-choices .protein-type p{
+    /* changes won't show? need to list every nested selector...*/
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    padding-top: 0.75rem;
+}
+.sauce-options{
+    max-width: 50%;
+    padding-top: 1.6rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    gap: 3.5rem;
+}
+#sauces p:first-of-type{
+    margin: 0;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+.sauce-type .circle{
+    display: eclipse; 
+    border-radius: 50%;
+    padding: 10px 15px 5px 15px;
+    color:#EEF7FF;
+    max-width: 250px;
+    height: auto;
+    overflow: hidden
+}
+.sauce-type .circle img{
+    max-width: 110%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    padding-left: 0%;
+    object-position: center;
+}
+.sauce-type p:first-of-type{ /* sauce label */
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding-top: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+.sauce-type p:last-of-type{ /* sauce details */
+    font-weight: 400;
+    margin-top: 0;
+    text-align: center;
+}
+
+/* ––––––– CTA: archive button ––––––––– */
+.cta-prompt{
+    max-width: 65%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 8rem;
+}
+.cta{
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight:600;
+    margin-top: 0;
+    margin-bottom: 1%;
+    color:#000000
+}
+.button{
+    text-align: center;
+    transform: scale(0.7);
+}
+.button a{
+  display: inline-block;
+  margin-top: 0;
+  background-color: #E42649;
+  border-radius: 999px;
+  padding: 0.9rem 2.5rem;
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+}
+.button a:hover{
+  display: inline-block;
+  margin-top: 0;
+  background-color: #F3DF2D;
+  border-radius: 999px;
+  padding: 1.3rem 1.6rem;
+  text-decoration: none;
+  color: #071D7F;
+  font-size: 1.3rem;
+  transform: rotate(4deg);
+  filter: drop-shadow(0 10px 18px rgba(255, 247, 0, 0.25));
+}
+.button a:hover img{
+    filter: drop-shadow(0 10px 18px rgba(22, 22, 22, 0.25));
+    transform: rotate(6deg);
+    transform: translateY(-5px);
+}
+
+
+/* ––––––– ARCHIVE MODAL––––––––– */
+
+/* locks page scroll on modal */
+body.lock-scroll{
+  overflow: hidden;
+}
+/* hide folder tab preview while active */
+#folder-preview.is-hidden{
+  opacity: 0;
+  pointer-events: none;
+}
+/* darken background*/
+#archiveOverlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 80;
+}
+/* sets folder img as backdrop*/
+#archiveModal{
+  position: fixed;
+  top: 2.5vh;
+  left: 50%;
+  z-index: 90;
+
+  width: min(1500px, 96vw);
+  height: 100vh;
+  max-width: 1600px;
+
+  /* folder-expanded image becomes container */
+  background-image: url("../assets/archive/folder-expand.png");
+  background-size: 104% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* Slide in from left -> to centered */
+  transform: translate(-150vw, 0);
+  transition: transform 360ms cubic-bezier(.2,.85,.2,1);
+  will-change: transform;
+}
+/* open state is centered */
+#archiveModal.is-open{
+  transform: translate(-50%, 0);
+}
+/* Header area */
+.archive-modal-header{
+  position: relative;
+  padding-top: 3rem; 
+  padding-bottom: 4rem;
+}
+.archive-modal-header h2{
+  margin: 0;
+  padding-bottom: 0;
+  font-size: 2.4rem;
+  color:#071D7F;
+  text-align: center;
+}
+/* X button */
+#archiveClose{
+  position: absolute;
+  top: 2.2rem;
+  right: 3rem;
+  border: none;
+  background: transparent;
+  font-size: 3rem;
+  color: #000;
+  cursor: pointer;
+}
+#archiveClose:hover{
+  transform: scale(1.05) rotate(2deg);
+  color: #071D7F;
+}
+
+/*internal scroll area (grid scrolls, folder container stays fixed) */
+.archive-scroll{
+  height: calc(95vh - 8rem); /* header space */
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0 6rem 5rem 6rem;
+}
+#key{
+  max-width: 10%;
+  margin: 0 auto;
+  font-family: "arboria", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1rem;
+}
+#key p{
+  text-align: center;
+  margin-top: -2rem;
+  margin-bottom: 0;
+  margin-left: 4%;
+  font-family: "arboria", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1rem;
+}
+.vegan{
+  color: rgb(4, 194, 67);
+  font-weight: 600;
+}
+.gf{
+  color: rgb(211, 157, 8);
+  font-weight: 600;
+}
+.vegan-gf{
+  color: rgb(224, 13, 157);
+  font-weight: 600;
+}
+
+/* 3 column grid*/
+#archiveGrid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6.5rem 2.5rem; /* row / col */
+  padding-top: 1.2rem;
+}
+/* each card takes roughly 1/3 width */
+.archive-card{
+  flex: 0 0 calc((100% - 10rem) / 3);
+}
+/* image style */
+.archive-img-wrap{
+  width: 68%;
+  border-radius: 26px;
+  overflow: hidden;
+}
+.archive-img-wrap img{
+  height: 331px;
+  width: 100%;
+  object-fit: contain;
+  /* object-fit: fill - better for layout but crops photos weirdly at diff screen sizes */
+  display: block;
+  margin: 0 auto;
+}
+
+/* details/summary: show ONLY dish name + arrow */
+.archive-details{
+  margin-top: 0.9rem;
+}
+.archive-summary{
+  font-size: 1.6rem;
+  font-weight: 700;
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* how to adjust space/ gap? */
+}
+/* remove default triangle marker */
+.archive-summary::-webkit-details-marker{
+  display: none;
+}
+/* custom arrow on the right */
+.archive-summary::after{
+  content: "›";
+  font-size: 2rem;
+  font-weight: 800;
+  transform: rotate(90deg);
+  transition: transform 180ms ease;
+  margin-left: 8px;
+  color: #000;
+}
+
+/* rotate arrow when open */
+.archive-details[open] .archive-summary::after{
+  transform: rotate(-90deg); /* points up */
+}
+
+/* hidden text area (revealed when clicked open) */
+.archive-desc{
+  margin-top: 0.75rem;
+  font-size: 1.15rem; 
+  line-height: 1.6rem;
+  max-width: 95%;
+}
+
+   
+/* –––––––––––– FOOTER ––––––––––––– */
+footer{
+  width: 100%;
+  height: auto;
+  background-color: #071D7F;
+
+  padding: 1% 3% 2% 3%;
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  margin-bottom: 0;
+  
+}
+.footer-left{
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+}
+.footer-logo p{
+  margin: 0;
+  line-height: 1.4;
+  color:#ffffff;
+  text-decoration: none;
+}
+.footer-logo a{
+  font-family: cheee-jimbo, sans-serif; /* logo font */
+  font-size: 2rem;
+  letter-spacing: 0.06rem;
+  color:#F3DF2D;
+  text-decoration: none;
+}
+.footer-logo a:hover{
+  transform: translateY(-2%);
+  transform: rotate(-2deg);
+  transition: transform 120ms ease;
+  filter: drop-shadow(5px 5px 10px #e6ff5b);
+  cursor: pointer;
+}
+.footer-logo p:nth-child(2){
+  margin-top: -2%;
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+.footer-logo p:nth-child(3){
+  font-size: 0.9rem;
+}
+/* SOCIAL ICONS */
+.social-icons{
+  padding-top: 2%;
+  display: flex;
+  gap: 1.25rem;
+}
+.social-icons a{
+  color: #ffffff;
+  font-size: 1.6rem;
+  transition: transform 150ms ease, opacity 150ms ease;
+}
+.social-icons a:hover{
+  transform: scale(1.1) rotate(-4deg);
+  opacity: 0.85;
+  color:#F3DF2D;
+}
+/* RIGHT SIDE LINKS */
+.footer-right{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  align-items: flex-end;
+}
+.footer-link{
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.05rem;
+  letter-spacing: 0.02rem;
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+.footer-link:hover{
+  opacity: 0.85;
+  transform: translateX(-3px);
+  text-decoration: underline;
+}
+
+
+/* –––––– RESPONSIVE –––––––– */
+@media (min-width: 1051) and (max-width: 1260px){
+  .archive-scroll{ padding: 0 3.5rem 2.5rem 3.5rem; }
+  #archiveGrid{ gap: 5rem 2rem; padding-top: 1.2rem;}
+  .archive-img-wrap{ width: 110%;}
+  .archive-img-wrap img{ width: 120%;}
+}
+
+@media (max-width: 1050px){
+  .archive-scroll{ padding: 0 3.5rem 2.5rem 3.5rem; }
+  .archive-card{ flex-basis: calc((100% - 3rem) / 2); }
+  #archiveClose{ right: 2.2rem; }
+  #archiveGrid{ gap: 4.5rem 2rem; padding-top: 1.2rem;}
+}
+
+@media (max-width: 650px){
+  #archiveModal{
+    height: 100vh;
+    width: 96vw;
+    top: 8vh;
+    /* need to test on mobile, make sure centered */
+  }
+  .archive-scroll{ padding: 0 2rem 2rem 2rem; }
+  .archive-card{ flex-basis: 100%; }
+  #archiveClose{ right: 1.5rem; top: 1.6rem; }
+  .archive-modal-header{ padding-top: 3rem; }
+  .archive-modal-header h2{ font-size: 2.4rem; }
+  .archive-img-wrap img{ height: 260px; }
+}
