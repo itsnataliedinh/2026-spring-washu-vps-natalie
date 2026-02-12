@@ -20,18 +20,37 @@
         margin-bottom: 4%;
     }
     h1{
-    font-family: "swear-text", serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 2.7rem;
-    margin-bottom: 0.25rem;
+        font-family: "swear-text", serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 2.7rem;
+        margin-bottom: 0.25rem;
+    }
+    h2{
+        font-family: "swear-text", serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 2.2rem;
+        margin-bottom: 0.25rem;
+        margin-top: 1rem;
     }
     h3{
-    font-family: "swear-text", serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1.2rem;
-    margin-bottom: 0.25rem;
+        font-family: "swear-text", serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 1.3rem;
+        margin-bottom: 0.25rem;
+        margin-top: 1rem;
+    }
+    p{
+        max-width: 45%;
+        font-family: "swear-text", serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        margin-bottom: 1rem;
+
     }
     ul {
     margin: 0%;
@@ -60,6 +79,31 @@
     a:visited{
         color: rgb(187, 50, 118);
     }
+    .exercises{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    .exercise-type{
+        border-radius: 25px;
+        border: 2px solid black;
+        margin-bottom: 3rem;
+        padding: 1rem 5rem 0.5rem 2rem;
+    }
+    .review h3{
+        font-size:1.5rem;
+    }
+    .review ul li{
+        font-size: 1.3rem;
+    }
+    .column{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+
+    }
     
 </style>
 
@@ -70,32 +114,64 @@
     </header>
 
     <!-- make collapisble drop down later -->
-    <h3>Markdown</h3>
-    <ul>
-        <li> <a href="01.md" target="_blank"> 01.md</a></li>
-        <li> <a href="02.md" target="_blank"> 02.md</a></li>
-        <li> <a href="03.md" target="_blank"> 03.md</a></li>
-        <li> <a href="04.md" target="_blank"> 04.md</a></li>
-        <li> <a href="05.md" target="_blank"> 05.md</a></li>
-    </ul>
+    <h2>Exercises</h2>
+    <section class="exercises">
+        <div class="exercise-type">
+            <h3>Markdown</h3>
+            <ul>
+                <li> <a href="01.md" target="_blank"> 01.md</a></li>
+                <li> <a href="02.md" target="_blank"> 02.md</a></li>
+                <li> <a href="03.md" target="_blank"> 03.md</a></li>
+                <li> <a href="04.md" target="_blank"> 04.md</a></li>
+                <li> <a href="05.md" target="_blank"> 05.md</a></li>
+            </ul>
+        </div>
 
-    <h3>HTML</h3>
-    <ul>
-        <li> <a href="01.html" target="_blank"> 01.html</a></li>
-        <li> <a href="02.html" target="_blank"> 02.html</a></li>
-        <li> <a href="03.html" target="_blank"> 03.html</a></li>
-        <li> <a href="04.html" target="_blank"> 04.html</a></li>
-        <li> <a href="05.html" target="_blank"> 05.html</a></li>
-    </ul>
+        <div class="exercise-type">
+            <h3>HTML</h3>
+            <ul>
+                <li> <a href="01.html" target="_blank"> 01.html</a></li>
+                <li> <a href="02.html" target="_blank"> 02.html</a></li>
+                <li> <a href="03.html" target="_blank"> 03.html</a></li>
+                <li> <a href="04.html" target="_blank"> 04.html</a></li>
+                <li> <a href="05.html" target="_blank"> 05.html</a></li>
+            </ul>
+        </div>
 
-     <h3>HTML + CSS</h3>
-    <ul>
-        <li> <a href="06.html" target="_blank">06.html</a></li>
-        <li> <a href="07.html" target="_blank">07.html</a></li>
-        <li> <a href="08.html" target="_blank">08.html</a></li>
-        <li> <a href="09.html" target="_blank">09.html</a></li>
-        <li> <a href="10.html" target="_blank">10.html</a></li>
-    </ul>
+        <div class="exercise-type">
+            <h3>HTML + CSS</h3>
+            <ul>
+                <li> <a href="06.html" target="_blank">06.html</a></li>
+                <li> <a href="07.html" target="_blank">07.html</a></li>
+                <li> <a href="08.html" target="_blank">08.html</a></li>
+                <li> <a href="09.html" target="_blank">09.html</a></li>
+                <li> <a href="10.html" target="_blank">10.html</a></li>
+            </ul>
+        </div>
+        </section>
+
+    <section class="review">
+        <h2>Final Deliverable</h2>
+
+        <h3>Restaurant Branding + Full Website</h3> <br>
+        <div class="columns">
+            <img src="home-clip.gif">
+            <img src="menu-clip.gif">
+        </div>
+        <p>Tiny Chef is a resturant that only has two regular dishes. However it has a rotating menu of "weekly specials." Tiny Chef currently does not have any websites and relies on social media. This project scope includes designing both an identity system (logo & brand) and website to capture the ephemeral nature of Tiny Chef's menu. In addition, to a "Menu," there's also an "Archive."</p>
+        <p>There is a total of 5 pages including Home, Menu, Archive, About, & Contact</p>
+        <ul>
+            <li> View the complete project: <a href="../tiny-chef-website/index.html" target="_blank"> Tiny Chef STL</a></li>
+            <li>Research & Process: View the <a href="https://www.figma.com/design/GSNLEE8ITUxkxAEDLKY1r5/Tiny-Chef-STL?node-id=0-1&t=zt3jc2ZWgkIyI58P-1" target="_blank">Figma mockups</a>.</li>
+        </ul>
+        <h3>Takeaways</h3>
+        <p>
+            While I'm more comfortable mocking up designs in Figma, I challenged myself to develop a full fuctioning website. I utilized animations on the hero section and "weekly special" part of the home page. I also focused on micro-interactions, such as the interactive clock button to view the hours and the jukebox button that plays rock music. For the home page, I wanted to create an immersive experience that captured the interioir vibe and playful personality of the restaurant. 
+        </p>
+         <p>
+            For the Menu/ Archive section, I decided to create the Archive page as a modal layover rather than be its own distinct page. I wanted to mimic a suprise reveal of coming across the blog as you would dig through a file cabinet before finding the folder. There's opportunity to refine the visual layout and micro typography, so it feels less cluttered. After the inital exercises, I was less focus on iteration and prioritized an overall system design. 
+        </p>
+    </section>
 
     <br>
     <br>
