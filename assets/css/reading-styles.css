@@ -24,11 +24,11 @@ ol{ margin: 1.5rem;}
 
 li{ margin:1.5rem; font-size: 1.35rem;}
 
-i{ margin-left: 0.25rem; margin-right: 0.25rem;}   
+i{ margin-left: 0.25rem; margin-right: 0.25rem;}  
 
-a {
+a{
+    margin: 0;
     color: black;
-    display: inline-block;
     transition: color 0.2s ease;
 }
 a:hover{
@@ -39,5 +39,22 @@ a:active{
 
 }
 a:visited{
+    color: rgb(187, 50, 118);
+}
+
+.nav {
+    margin-top: 6rem;
+    color: black;
+    display: inline-block;
+    transition: color 0.2s ease;
+}
+.nav:hover{
+    color: rgb(207, 17, 112);
+}
+.nav:active{
+    color: rgb(187, 50, 118);
+
+}
+.nav:visited{
     color: rgb(187, 50, 118);
 }
