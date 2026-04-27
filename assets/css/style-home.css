@@ -1,12 +1,53 @@
 html,
 body {
     cursor: url('cursor.png') 4 4, auto;
+    background-color: rgb(252, 239, 248);
+    /* transition: background 3s ease; */
 }
 * {
     box-sizing: border-box;
-    margin: 5%;
-    background-color: rgb(252, 239, 248);
 }
+section{
+    padding-top: 5%;
+    padding-left: 8%;
+    padding-bottom: 8%;
+}
+/* container for buttons */
+.mode-toggle {
+  position: fixed;
+  top: 1.8rem;
+  right: 3rem;
+  display: flex;
+  gap: 6px;
+  z-index: 999;
+}
+button {
+  padding: 8px 14px;
+  border: 1.5px solid black;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.25rem;
+}
+button:hover{
+    background-color: black;
+    color:white;
+}
+button.active {
+  background-color: black;
+  color: white;
+}
+
+/* CHAOS MODE */
+body.chaos {
+  background-size: 100% 400%;
+  animation: gradientMove 12s linear infinite;
+  transition: 3s ease;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
 h1{
     font-family: "swear-text", serif;
     font-weight: 600;
@@ -27,6 +68,7 @@ h2{
     font-style: normal;
     font-size: 1.65rem;
     margin-bottom: 0.25rem;
+    padding-top: 1rem;
 }  
 ul {
     margin: 0%;
